@@ -18,17 +18,24 @@ import java.util.Scanner;
  */
 public class Daysmidterm {
 
-    /**
-     * @param args the command line arguments
-     */
+    enum Day {
+        ONE("Monday"), TWO("Tuesday"), THREE("Wednesday"), FOUR("Thursday"), FIVE("Friday");
+        
+        private final String name;
+        
+        Day(String name) {
+            this.name = name;
+        }
+        
+        public String getName() {
+            return name;
+        }
+    }
+    
     public static void main(String[] args) {
          
-    Scanner in =new Scanner(System.in);
-    System.out.println("Enter the day number (one,two,three,four,five) in string");
-    String code = in.next();
-    Weekdays t= new Weekdays();
-    t.nameOfDay(code); 
-    }// TODO code application logic here
-    
-    
+        for (Day day : Day.values()) {
+            System.out.println(day + " is " + day.getName());
+        }
+    }
 }
